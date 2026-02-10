@@ -1,0 +1,62 @@
+{
+  "easy": [
+    {
+      "id": 1,
+      "text": "Quem é o verdadeiro dono de tudo o que possuímos?",
+      "options": ["Nós mesmos", "O governo", "Deus", "Nossa família"],
+      "correct": 2
+    },
+    {
+      "id": 2,
+      "text": "O que significa o termo 'mordomo' no contexto bíblico?",
+      "options": ["Um escravo sem direitos", "Um administrador de bens alheios", "Um dono de terras", "Um cobrador de impostos"],
+      "correct": 1
+    },
+    {
+      "id": 3,
+      "text": "Qual porcentagem do dízimo é ensinada na Bíblia?",
+      "options": ["5%", "10%", "20%", "O que sobrar"],
+      "correct": 1
+    }
+  ],
+  "medium": [
+    {
+      "id": 31,
+      "text": "Na parábola dos talentos, o que o senhor disse ao servo que escondeu o dinheiro?",
+      "options": ["Bom e fiel servo", "Servo mau e negligente", "Fizeste bem em guardar", "Não tem problema"],
+      "correct": 1
+    },
+    {
+      "id": 32,
+      "text": "Segundo 1 Coríntios 6:19, por que devemos cuidar do nosso corpo?",
+      "options": ["Para sermos atletas", "Porque ele é templo do Espírito Santo", "Por estética", "Para viver 100 anos"],
+      "correct": 1
+    },
+    {
+      "id": 33,
+      "text": "O que a Bíblia diz sobre ser fiador de alguém em Provérbios?",
+      "options": ["É um ato de amor", "É perigoso e deve ser evitado", "Sempre devemos ser", "Não menciona o assunto"],
+      "correct": 1
+    }
+  ],
+  "hard": [
+    {
+      "id": 61,
+      "text": "Qual a raiz grega da palavra 'mordomia'?",
+      "options": ["Koinonia", "Oikonomia", "Diakonia", "Ekklesia"],
+      "correct": 1
+    },
+    {
+      "id": 62,
+      "text": "Segundo a mordomia do tempo em Efésios 5:16, o que significa 'remi o tempo'?",
+      "options": ["Aproveitar cada oportunidade", "Trabalhar sem parar", "Dormir menos", "Estudar história"],
+      "correct": 0
+    },
+    {
+      "id": 63,
+      "text": "No Antigo Testamento, qual era a punição para o descaso com as ofertas das primícias?",
+      "options": ["Multa", "Exílio", "Quebra da aliança e maldição", "Apenas uma advertência"],
+      "correct": 2
+    }
+  ]
+}
