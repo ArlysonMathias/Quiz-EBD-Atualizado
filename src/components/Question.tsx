@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { Button } from "./Button";
 
 interface QuestionProps {
@@ -39,6 +40,14 @@ export const Question = ({ data, onBack, onReset }: QuestionProps) => {
     return "bg-slate-200 text-slate-400 opacity-50";
   };
 
+  const verifyAnswer = (index: number) => {
+    if (index === data?.correct) {
+      toast.success("Resposta correta!");
+    } else {
+      toast.error("Resposta incorreta!");
+    }
+  };
+
   if (!data) return null;
 
   return (
@@ -50,7 +59,10 @@ export const Question = ({ data, onBack, onReset }: QuestionProps) => {
             <button
               type="button"
               disabled={hasAnswered}
-              onClick={() => setSelectedIdx(index)}
+              onClick={() => {
+                setSelectedIdx(index);
+                verifyAnswer(index);
+              }}
               key={index}
               className={`mt-4 btn cursor-pointer ${getColors(index)}
                text-white font-bold py-2 px-4 rounded-2xl`}>

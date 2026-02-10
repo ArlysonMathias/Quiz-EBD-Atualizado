@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import "./App.css";
 import { Menu } from "./components/Menu";
 import { Question } from "./components/Question";
@@ -27,7 +28,7 @@ function App() {
       setCurrentQuestion(avaliable[randomIndex]);
       setCurrentDifficulty(level);
     } else {
-      alert(`As questões do nível ${level} não estão disponíveis.`);
+      toast.error(`As questões do nível ${level === "easy" ? "fácil" : level === "medium" ? "médio" : "difícil"} não estão disponíveis.`);
     }
   };
 
