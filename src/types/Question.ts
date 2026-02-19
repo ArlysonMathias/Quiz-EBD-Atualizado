@@ -1,11 +1,12 @@
-export interface QuestionData {
+export interface Question {
   id: number;
   text: string;
   options: string[];
   correct: number;
 }
+
 export interface QuestionsFile {
-  easy?: QuestionData[];
-  medium?: QuestionData[];
-  hard?: QuestionData[];
+  easy: Question[];
+  medium: Question[];
+  hard: Question[];
 }

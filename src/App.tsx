@@ -4,12 +4,12 @@ import toast from "react-hot-toast";
 import "./App.css";
 import { Menu } from "./components/Menu";
 import { Question } from "./components/Question";
-import type { QuestionsFile } from "./types/Question";
+import type { Question as QuestionType, QuestionsFile } from "./types/Question";
 
 function App() {
   const [questionsPool, setQuestionsPool] = useState<QuestionsFile | null>(null);
   const [allQuestions, setAllQuestions] = useState<QuestionsFile | null>(null);
-  const [currentQuestion, setCurrentQuestion] = useState<any>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<QuestionType | null>(null);
   const [currentDifficulty, setCurrentDifficulty] = useState<keyof QuestionsFile | null>(null);
 
   useEffect(() => {
@@ -28,7 +28,12 @@ function App() {
       setCurrentQuestion(avaliable[randomIndex]);
       setCurrentDifficulty(level);
     } else {
-      toast.error(`As questões do nível ${level === "easy" ? "fácil" : level === "medium" ? "médio" : "difícil"} não estão disponíveis.`);
+      const difficultyNameMap = {
+        easy: "fácil",
+        medium: "médio",
+        hard: "difícil"
+      };
+      toast.error(`As questões do nível ${difficultyNameMap[level]} não estão disponíveis.`);
     }
   };
 
@@ -36,7 +41,7 @@ function App() {
     if (currentQuestion && currentDifficulty && questionsPool) {
       const updatedPool = {
         ...questionsPool,
-        [currentDifficulty]: questionsPool[currentDifficulty]!.filter((question) => question.id !== currentQuestion.id)
+        [currentDifficulty]: (questionsPool[currentDifficulty] ?? []).filter((question) => question.id !== currentQuestion.id)
       };
       setQuestionsPool(updatedPool); // Atualiza o estado
       setCurrentQuestion(null); // Volta para o menu
